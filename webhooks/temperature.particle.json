@@ -1,0 +1,55 @@
+{
+  "event": "temperature",
+  "url": "https://app.datadoghq.com/api/v1/series",
+  "requestType": "POST",
+  "mydevices": true,
+  "noDefaults": false,
+  "query": {
+    "application_key": "DATADOG APP KEY HERE",
+    "api_key": "DATADOG API KEY HERE"
+  },
+  "body": {
+    "series": [
+      {
+        "metric": "thermo0.temperature",
+        "points": [
+          [
+            "{{timestamp}}",
+            "{{temperature}}"
+          ]
+        ],
+        "host": "thermo0"
+      },
+      {
+        "metric": "thermo0.battery_voltage",
+        "points": [
+          [
+            "{{timestamp}}",
+            "{{voltage}}"
+          ]
+        ],
+        "host": "thermo0"
+      },
+      {
+        "metric": "thermo0.state_of_charge",
+        "points": [
+          [
+            "{{timestamp}}",
+            "{{soc}}"
+          ]
+        ],
+        "host": "thermo0"
+      },
+      {
+        "metric": "thermo0.power_alert",
+        "points": [
+          [
+            "{{timestamp}}",
+            "{{power_alert}}"
+          ]
+        ],
+        "host": "thermo0"
+      }
+    ]
+  }
+}
